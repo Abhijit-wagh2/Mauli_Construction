@@ -19,8 +19,6 @@ app.use(morgan('dev'))
 //routes
 app.use('/api/v1/auth',router);
 
-
-
 app.get('/' , (req,res) =>{
     res.send('Welcome to app')
 })
