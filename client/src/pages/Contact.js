@@ -4,7 +4,7 @@ import Layout from '../components/Layout'
 function Contact() {
   return (
     <Layout>
-        <h1>Contact Us</h1>
+        <h1>Content Us</h1> 
     </Layout>
   )
 }
