@@ -10,6 +10,15 @@ const router = express.Router();
 router.post('/register',registerController);
 router.post('/login',loginController);
 
+router.get("/user-auth", requiredSignIn, (req, res) => {
+    res.status(200).send({ ok: true });
+  });
+
+  //protected Admin route auth
+  router.get("/admin-auth", requiredSignIn, isAdmin, (req, res) => {
+    res.status(200).send({ ok: true });
+  });
+  
 //login || post
 // router.post('/login',loginController);
 
