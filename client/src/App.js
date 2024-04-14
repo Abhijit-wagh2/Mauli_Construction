@@ -5,6 +5,11 @@ import Policy from './pages/Policy.js';
 import Pagenotfound from './pages/Pagenotfound.js';
 import Contact from './pages/Contact.js';
 import Login from "./pages/Auth/Login.js";
+import AdminDashboard from "./pages/Admin/AdminDashboard.js";
+import CreateProduct from "./pages/Admin/CreateProduct.js";
+
+import UpdateProduct from "./pages/Admin/UpdateProduct.js";
+import DummyProduct from "./pages/Admin/DummyProduct.js";
 
 
 function App() {
@@ -23,7 +28,19 @@ function App() {
 
         <Route path="/login" element={<Login />} />
 
+        <Route path="/admin" element={<AdminDashboard />} />
+
+        <Route path="/dashboard/admin/create-product" element={<CreateProduct />} />
+
+        <Route path="/dashboard/admin/product" element={<DummyProduct/>} />
+
+
+        <Route path="/dashboard/admin/product/:slug" element={<UpdateProduct/>} />
+
+
        </Routes>
+
+       
        
     </>
   );

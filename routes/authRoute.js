@@ -1,8 +1,7 @@
 import express from 'express'
 import { loginController, registerController } from '../controllers/authController.js';
-// import {loginController, registerController, testController,forgotPasswordController, updateProfileController, getOrdersController, getAllOrdersController, orderStatusController} from '../controllers/authController.js';
-// import { isAdmin, requiredSignIn } from '../middlerwares/authMiddleware.js';
-//router object
+import { isAdmin, requiredSignIn } from '../middlewares/authMiddleware.js';
+
 const router = express.Router();
 
 //routing
@@ -10,14 +9,8 @@ const router = express.Router();
 router.post('/register',registerController);
 router.post('/login',loginController);
 
-router.get("/user-auth", requiredSignIn, (req, res) => {
-    res.status(200).send({ ok: true });
-  });
 
-  //protected Admin route auth
-  router.get("/admin-auth", requiredSignIn, isAdmin, (req, res) => {
-    res.status(200).send({ ok: true });
-  });
+
   
 //login || post
 // router.post('/login',loginController);

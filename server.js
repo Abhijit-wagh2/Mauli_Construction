@@ -4,7 +4,8 @@ import dotenv from 'dotenv';
 import morgan from "morgan";
 import connectDB from "./config/db.js";
 import router from "./routes/authRoute.js";
-//configure env
+import productRoutes from "./routes/productRoutes.js";
+
 dotenv.config();
 
 //database config
@@ -18,6 +19,7 @@ app.use(morgan('dev'))
 
 //routes
 app.use('/api/v1/auth',router);
+app.use('/api/v1/product',productRoutes);
 
 app.get('/' , (req,res) =>{
     res.send('Welcome to app')
