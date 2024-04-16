@@ -10,7 +10,7 @@ import CreateProduct from "./pages/Admin/CreateProduct.js";
 
 import UpdateProduct from "./pages/Admin/UpdateProduct.js";
 import DummyProduct from "./pages/Admin/DummyProduct.js";
-
+import './App.css';
 
 function App() {
   return (

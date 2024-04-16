@@ -1,11 +1,153 @@
-import React from 'react'
-import Layout from '../components/Layout'
-
+import React,{useState} from 'react'
+import emailjs from '@emailjs/browser';
+import Map from '../components/Map'
+import Footer from '../components/Footer'
+import { NavLink } from 'react-router-dom';
+import image from '../components/img/home1.png'
 function Contact() {
+
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [message, setMessage] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const serviceId = "service_37l7w4o";
+    const templateId = "template_nzn6tn9";
+    const publicKey = "DK7lAARSF3aqYroPP";
+
+    const templateParams = {
+      name: name,
+      email: email,
+      phone: phone,
+      message: message,
+    };
+
+    emailjs
+      .send(serviceId, templateId, templateParams, publicKey)
+      .then((response) => {
+        console.log("email sent successfully", response);
+        setName('');
+        setEmail('');
+        setPhone('');
+        setMessage('');
+      })
+      .catch((error) => {
+        console.log("Error sending mail", error);
+      });
+  };
+
   return (
-    <Layout>
-        <h1>Content Us</h1> 
-    </Layout>
+
+    
+    <div className='contact'>
+    
+  
+  <main id="main">
+
+    <div className="breadcrumbs d-flex align-items-center" style={{ backgroundImage: "url(../components/img/home1.png)"}}>
+      <div className="container position-relative d-flex flex-column align-items-center" data-aos="fade">
+
+        <h2>Contact</h2>
+        <ol>
+          <li><NavLink to="/">Home</NavLink></li>
+          <li>Contact</li>
+        </ol>
+
+      </div>
+    </div>
+
+    <section id="contact" className="contact">
+      <div className="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div className="row gy-4">
+          <div className="col-lg-6">
+            <div className="info-item  d-flex flex-column justify-content-center align-items-center">
+              <i className="bi bi-map"></i>
+              <h3>Our Address</h3>
+              <p>26, Renuka Complex,<br/>
+              near Bus Stand, Bajartal,<br/> 
+              Chandwad, Maharashtra 423101</p>
+            </div>
+          </div>
+
+          <div className="col-lg-3 col-md-6">
+            <div className="info-item d-flex flex-column justify-content-center align-items-center">
+              <i className="bi bi-envelope"></i>
+              <h3>Email Us</h3>
+              <p> mangeshshelke10@gmail.com</p>
+            </div>
+          </div>
+
+          <div className="col-lg-3 col-md-6">
+            <div className="info-item  d-flex flex-column justify-content-center align-items-center">
+              <i className="bi bi-telephone"></i>
+              <h3>Call Us</h3>
+              <p>+91 7387171034</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div className="row gy-4 mt-1">
+
+        <Map/>
+
+        <section id="get-started" className="get-started section-bg">
+      
+        <div className="container">
+            <div className="row justify-content-between gy-4">
+              <div className="col-lg-6 d-flex align-items-center" data-aos="fade-up">
+                <div className="content">
+                  <h3>Connect with Us</h3>
+                  <p>Have a doubt? Feel free to ask here.</p>
+                </div>
+              </div>
+    
+              <div className="col-lg-5" data-aos="fade">
+                <form onSubmit={handleSubmit} className="php-email-form">
+                  <h3>Ask</h3>
+                  <p>You can reach out to us by sending us a message or asking any question of your interest. We would love to listen from you.</p>
+                  <div className="row gy-3">
+                    <div className="col-md-12">
+                      <input type="text" name="name" value={name} onChange={(e) => setName(e.target.value)} className="form-control" placeholder="Name" required/>
+                    </div>
+                    <div className="col-md-12 ">
+                      <input type="email" className="form-control" name="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" required/>
+                    </div>
+                    <div className="col-md-12">
+                      <input type='number' className="form-control" name="phone" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="Phone" required/>
+                    </div>
+                    <div className="col-md-12">
+                      <textarea className="form-control" name="message" value={message} onChange={(e) => setMessage(e.target.value)} rows="6" placeholder="Message" required></textarea>
+                    </div>
+                    <div className="col-md-12 text-center">
+                      <div className="loading">Loading</div>
+                      <div className="error-message"></div>
+                      <div className="sent-message">Your quote request has been sent successfully. Thank you!</div>
+                      <button type="submit">Send Message</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          </section>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+<Footer/>
+  
+  <a href="#" className="scroll-top d-flex align-items-center justify-content-center"><i className="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader"></div>
+
+</div>
   )
 }
 
