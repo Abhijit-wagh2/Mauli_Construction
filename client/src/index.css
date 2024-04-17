@@ -11,3 +11,44 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* font-family: 'Poppins', sans-serif; */
+/* font-family: 'Playfair Display', serif; */
+
+/* //navbar css */
+.navbar {
+  font-family: "Poppins", sans-serif;
+  font-size: 17px;
+  line-height: 26px;
+  text-transform: uppercase;
+  box-shadow: 0 8px 6px -6px gray;
+  --webkit-box-shadow: 0 8px 6px -6px gray;
+  border-bottom: solid gray !important;
+}
+
+
+.nav-link {
+  color:black;
+  font-weight: 300 !important;
+}
+
+.active {
+  color:black;
+  border-bottom: 2px solid black;
+}
+
+.navbar-brand {
+  
+  color:black;
+  font-weight: 700;
+  font-family: "roboto", sans-serif;
+  letter-spacing: 3px;
+}

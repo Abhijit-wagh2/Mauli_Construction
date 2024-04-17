@@ -5,7 +5,9 @@ import toast from "react-hot-toast";
 import axios from "axios";
 import { Select } from "antd";
 import { useNavigate } from "react-router-dom";
+import NavbarTop from '../../components/NavbarTop';
 const { Option } = Select;
+
 
 function CreateProduct() {
   const navigate = useNavigate();
@@ -70,7 +72,9 @@ function CreateProduct() {
 
 
   return (
-    <Layout title={"Dashboard - Create Product"}>
+    <>
+    <NavbarTop/>
+    
     <div className="container-fluid m-3 p-3">
       <div className="row">
         <div className="col-md-3">
@@ -180,7 +184,7 @@ function CreateProduct() {
         </div>
       </div>
     </div>
-  </Layout>
+    </>
   )
 }
 

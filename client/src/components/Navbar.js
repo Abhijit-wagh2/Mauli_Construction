@@ -25,7 +25,7 @@ function Navbar() {
 
   return (
     <>
-      <div id="navbar" className="navbar">
+      <div id="navbar_2" className="navbar_2">
         <div className='logo'><img src={logo} alt="" /></div>
         <ul className='links'>
           <li><NavLink to="/" className="active"> Home</NavLink></li>
@@ -33,7 +33,11 @@ function Navbar() {
           About Us</NavLink></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#features">Features</a></li>
-          <li><a href="#">Projects</a></li>
+          <li className="nav-item">
+                <NavLink to="/dashboard/admin/product_dummy" className="nav-link">
+                  Projects
+                </NavLink>
+              </li>
           <li><a href="#testimonials">Blogs</a></li>
           <li><NavLink to="/contact">
           Contact</NavLink></li>
@@ -47,9 +51,14 @@ function Navbar() {
           <li><a href="#constructions">About</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#features">Features</a></li>
-          <li><a href="#">Projects</a></li>
+          <li className="nav-item">
+                <NavLink to="/dashboard/admin/product_dummy" className="nav-link">
+                  Projects
+                </NavLink>
+              </li>
           <li><a href="#">Blogs</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><NavLink to="/contact">
+          Contact</NavLink></li>
         </ul>
       </div>
     </>

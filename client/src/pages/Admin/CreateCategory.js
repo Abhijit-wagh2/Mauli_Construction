@@ -5,6 +5,7 @@ import toast from "react-hot-toast";
 import axios from "axios";
 import CategoryForm from '../../components/Form/CategoryForm';
 import { Modal } from "antd";
+import NavbarTop from '../../components/NavbarTop';
 
 
 function CreateCategory() {
@@ -99,7 +100,8 @@ function CreateCategory() {
 
 
   return (
-    <Layout title={"Dashboard - Create Category"}>
+    <>
+    <NavbarTop/>
     <div className="container-fluid m-3 p-3">
       <div className="row">
         <div className="col-md-3">
@@ -167,7 +169,7 @@ function CreateCategory() {
         </div>
       </div>
     </div>
-  </Layout>
+    </>
   )
 }
 

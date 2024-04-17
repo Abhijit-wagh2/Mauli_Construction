@@ -4,6 +4,7 @@ import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
 import AdminMenu from "../../components/AdminMenu";
 import Layout from "../../components/Layout";
+import NavbarTop from "../../components/NavbarTop";
 
 function DummyProduct() {
     const [products, setProducts] = useState([]);
@@ -24,7 +25,9 @@ function DummyProduct() {
       getAllProducts();
     }, []);
     return (
-      <Layout>
+      <>
+      <NavbarTop/>
+
         <div className="row">
           <div className="col-md-3">
             <AdminMenu />
@@ -45,8 +48,8 @@ function DummyProduct() {
                       alt={p.name}
                     />
                     <div className="card-body">
-                      <h5 className="card-title">{p.name}</h5>
-                      <p className="card-text">{p.description}</p>
+                      <h5 className="card-title_">{p.name}</h5>
+                      <p className="card-text_">{p.description}</p>
                     </div>
                   </div>
                 </Link>
@@ -54,7 +57,7 @@ function DummyProduct() {
             </div>
           </div>
         </div>
-      </Layout>
+      </>
     );
 }
 

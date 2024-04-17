@@ -11,6 +11,7 @@ import CreateProduct from "./pages/Admin/CreateProduct.js";
 import UpdateProduct from "./pages/Admin/UpdateProduct.js";
 import DummyProduct from "./pages/Admin/DummyProduct.js";
 import './App.css';
+import Products from "./pages/Admin/Product.js";
 
 function App() {
   return (
@@ -32,7 +33,7 @@ function App() {
 
         <Route path="/dashboard/admin/create-product" element={<CreateProduct />} />
 
-        <Route path="/dashboard/admin/product" element={<DummyProduct/>} />
+        <Route path="/dashboard/admin/product_dummy" element={<Products/>} />
 
 
         <Route path="/dashboard/admin/product/:slug" element={<UpdateProduct/>} />

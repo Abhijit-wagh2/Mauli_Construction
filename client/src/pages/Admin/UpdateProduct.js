@@ -6,6 +6,7 @@ import { Select } from "antd";
 import { useNavigate, useParams } from "react-router-dom";
 import Layout from "../../components/Layout";
 import AdminMenu from "../../components/AdminMenu";
+import NavbarTop from "../../components/NavbarTop";
 const { Option } = Select;
  
 const UpdateProduct = () => {
@@ -105,7 +106,8 @@ const UpdateProduct = () => {
     }
   };
   return (
-    <Layout title={"Dashboard - Create Product"}>
+    <>
+      <NavbarTop/>
       <div className="container-fluid m-3 p-3">
         <div className="row">
           <div className="col-md-3">
@@ -231,7 +233,7 @@ const UpdateProduct = () => {
           </div>
         </div>
       </div>
-    </Layout>
+      </>
   );
 };
 
