@@ -34,7 +34,8 @@ function App() {
         <Route path="/dashboard/admin/create-product" element={<CreateProduct />} />
 
         <Route path="/dashboard/admin/product_dummy" element={<Products/>} />
-
+        <Route path="/dashboard/admin/product" element={<DummyProduct/>} />
+        
 
         <Route path="/dashboard/admin/product/:slug" element={<UpdateProduct/>} />
 

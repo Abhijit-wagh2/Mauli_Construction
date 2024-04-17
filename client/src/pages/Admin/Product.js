@@ -27,11 +27,11 @@ const Products = () => {
     // <Layout>
       <div className="row">
         <div className="col-md-12 ">
-   <    h1 className="text-center">All Projects </h1>       
-          <div className="d-flex">
+   <    h1 className="text-center ">All Projects </h1>       
+          <div className="d-flex flex-wrap">
             {products?.map((p) => (
              
-                <div className="card m-1" >
+                <div className="card m-1 " style={{ width: '400px', height: '450px' }} >
                   <img
                     src={`${process.env.REACT_APP_API}/api/v1/product/product-photo/${p._id}`}
                     className="card-img-top"
