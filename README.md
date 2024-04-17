@@ -4,14 +4,25 @@ Clone the repository:
 
 bash
 Copy code
-git clone https://github.com/your-username/mern-project.git
+https://github.com/abhijit2712/Mauli_Construction.git
 Navigate to the project directory:
 
 bash
 Copy code
-cd mern-project
-Install dependencies for both frontend and backend:
+`cd Mauli_Construction.git`
 
+
+
+# Start the backend server:
+`npm run server`
+
+# Start the frontend development server:
+1 `cd client`
+2 `npm start`
+Open your browser and navigate to http://localhost:3000 to view the application.
+
+
+Install dependencies for both frontend and backend:
 bash
 Copy code
 cd client
@@ -22,15 +33,6 @@ Create a .env file in the server directory and add your MongoDB connection URI:
 
 plaintext
 Copy code
-
-# Start the backend server:
-`npm run server`
-
-# Start the frontend development server:
-1 `cd client`
-2 `npm start`
-Open your browser and navigate to http://localhost:3000 to view the application.
-
 Usage
 Register a new user account or login with existing credentials.
 Navigate through the app to perform CRUD operations on the data.
