@@ -7,19 +7,21 @@ import Blog from './Blog';
 import Features from './Features';
 import Services from './Services';
 import Home from './Home';
+import About from './About';
 
 function Layout({children}) {
   return (
     <div>
         <Home/>
+        <About/>
         <Services/>
         <Features/>
-        <Blog/>
+        
         <main>
         <Toaster />
             {children}
         </main>
-        
+        <Blog/>
         <ReachUs/>
         <Footer/>
     </div>
