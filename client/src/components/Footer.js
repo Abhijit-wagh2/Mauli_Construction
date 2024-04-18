@@ -58,11 +58,11 @@ function Footer() {
     </div>
   </div>
 
-  <div className="footer-legal text-center position-relative">
+  <div className="footer-legal  position-relative">
     <div className="container">
-      <div className="copyright">
+      <div className="copyright"><center>
         &copy; Copyright <strong><span>Mauli Construction</span></strong>. All Rights Reserved
-      </div>
+        </center></div>
       
     </div>
   </div>

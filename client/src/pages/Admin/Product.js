@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
+import NavbarTop from "../../components/NavbarTop";
 import { Link } from "react-router-dom";
 import AdminMenu from "../../components/AdminMenu";
 import Layout from "../../components/Layout";
@@ -25,9 +26,11 @@ const Products = () => {
   }, []);
   return (
     // <Layout>
+   
       <div className="row">
+      <NavbarTop/>
         <div className="col-md-12 ">
-   <    h1 className="text-center ">All Projects </h1>       
+        <div className="section-header section-bg" style={{padding:"50px"}}><h2 style={{paddingTop:"20px"}}>Portfolio</h2></div>       
           <div className="d-flex flex-wrap">
             {products?.map((p) => (
              
