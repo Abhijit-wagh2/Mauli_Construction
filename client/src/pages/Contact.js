@@ -46,7 +46,7 @@ function Contact() {
   
   <main id="main">
 
-    <div className="breadcrumbs d-flex align-items-center" style={{ backgroundImage: "url(../components/img/home1.png)"}}>
+    <div className="breadcrumbs d-flex align-items-center" style={{ backgroundImage: `url(${image})`}}>
       <div className="container position-relative d-flex flex-column align-items-center" data-aos="fade">
 
         <h2>Contact</h2>
