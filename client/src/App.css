@@ -821,6 +821,7 @@ section {
 
 .testimonials .testimonial-item .testimonial-img {
   width: 90px;
+  height:90px;
   border-radius: 10px;
   border: 6px solid #fff;
   position: absolute;
@@ -2391,7 +2392,7 @@ section {
 --------------------------------------------------------------*/
 .footer {
   color: #fff;
-  /* background: url("../img/footer-bg.jpg") top center no-repeat; */
+  background: url("../src/components/img/footer-bg.jpg") top center no-repeat; 
   background-size: cover;
   font-size: 14px;
   padding: 80px 0 60px 0;

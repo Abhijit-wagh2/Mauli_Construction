@@ -36,12 +36,12 @@ code {
 
 
 .nav-link {
-  color:black;
+  color:#fff;
   font-weight: 300 !important;
 }
 
 .active {
-  color:black;
+  color:#fff;
   border-bottom: 2px solid black;
 }
 

@@ -32,7 +32,7 @@ function Footer() {
           <h4>Useful Links</h4>
           <ul>
             <li><NavLink to="/">Home</NavLink></li>
-            <li><a href="#about">About us</a></li>
+            <li><a href="/about">About us</a></li>
             <li><a href="#services">Services</a></li>
             <li className="nav-item">
                 <NavLink to="/dashboard/admin/product_dummy" className="nav-link">

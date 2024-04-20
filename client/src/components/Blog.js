@@ -1,6 +1,7 @@
 import React,{useEffect} from 'react'
 import ReviewCard from './BlogCard'
 import Swiper from 'swiper';
+import image from '../components/img/home1.png'
 function Blog() {
   useEffect(() => {
     new Swiper('.slides-2', {
@@ -26,7 +27,7 @@ function Blog() {
         <div className="slides-2 swiper">
           <div className="swiper-wrapper">
 
-          <ReviewCard name="Saul Goodman" identity="Ceo &amp; Founder" review=" Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper."/>
+          <ReviewCard image={image} name="Saul Goodman" identity="Ceo &amp; Founder" review=" Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper."/>
             
           <ReviewCard name="Sara Wilsson" identity="Designer" review=" Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa."/>
 
