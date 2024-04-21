@@ -479,7 +479,7 @@ section {
 .get-started .php-email-form button[type=submit]:hover {
   background: rgba(254, 185, 0, 0.8);
 }
-
+/* 
 @keyframes animate-loading {
   0% {
     transform: rotate(0deg);
@@ -488,7 +488,7 @@ section {
   100% {
     transform: rotate(360deg);
   }
-}
+} */
 
 /*--------------------------------------------------------------
 # Constructions Section
@@ -880,7 +880,9 @@ section {
   margin-top: 20px;
   position: relative;
 }
-
+.testimonials .swiper-slide{
+  width:936px;
+}
 .testimonials .swiper-pagination .swiper-pagination-bullet {
   width: 12px;
   height: 12px;
@@ -1122,7 +1124,6 @@ section {
 
 .team .member .member-img {
   margin: 0 80px;
-  border-radius: 50%;
   overflow: hidden;
   position: relative;
 }
@@ -1571,7 +1572,7 @@ section {
   background: rgba(254, 185, 0, 0.8);
 }
 
-@keyframes animate-loading {
+/* @keyframes animate-loading {
   0% {
     transform: rotate(0deg);
   }
@@ -1579,7 +1580,7 @@ section {
   100% {
     transform: rotate(360deg);
   }
-}
+} */
 
 /*--------------------------------------------------------------
 # Recent Blog Posts Section

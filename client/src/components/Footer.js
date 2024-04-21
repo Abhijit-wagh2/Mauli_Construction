@@ -9,12 +9,15 @@ function Footer() {
     <div className="container">
       <div className="row">
 
-        <div className="col-lg-4 col-md-6">
+        <div className="col-lg-6 col-md-6">
           <div className="footer-info">
-            <h3>Mauli Construction</h3>
+            <h3>Mauli Construction and <br />Interior Services</h3>
             <p>
-              26, Renuka Complex,<br/>
+              Main Office : 26, Renuka Complex,<br/>
               near Bus Stand, Bajartal,<br/> 
+              Chandwad, Maharashtra 423101<br/><br/>
+              Branch Office : Near HDFC bank, <br/>
+              service road, Vadalibhoi<br/> 
               Chandwad, Maharashtra 423101<br/><br/>
               <strong>Phone:</strong> +91 7387171034<br/>
               <strong>Email:</strong> mangeshshelke10@gmail.com<br/>
@@ -28,8 +31,9 @@ function Footer() {
           </div>
         </div>
 
-        <div className="col-lg-4 col-md-6 footer-links">
-          <h4>Useful Links</h4>
+       
+        <div className="col-lg-3 col-md-6 footer-links">
+          <br /><h4>Useful Links</h4>
           <ul>
             <li><NavLink to="/">Home</NavLink></li>
             <li><a href="/about">About us</a></li>
@@ -39,21 +43,27 @@ function Footer() {
                   Projects
                 </NavLink>
             </li>
+            <li><a href="/contact">Contact</a></li>
             <li><a href="#">Terms of service</a></li>
             <li><a href="#">Privacy policy</a></li>
           </ul>
         </div>
+        <div class="col-lg-3 col-md-3 footer-links">
+        <br />
+            <h4>Our Services</h4>
+            <ul>
+              <li><a href="#services">Construction Consultancy</a></li>
+              <li><a href="#services">Planning</a></li>
+              <li><a href="#services">RCC Design and Supervision</a></li>
+              <li><a href="#services">Estimation & Valuation</a></li>
+              <li><a href="#services">3D Elevations</a></li>
+              <li><a href="#services">Exterior and Interior Designing</a></li>
+              <li><a href="#services">N.A. Layouts</a></li>
+              <li><a href="#services">Land Developers & Construction</a></li>
+            </ul>
+          </div>
 
-        <div className="col-lg-4 col-md-6 footer-links">
-          <h4>Our Services</h4>
-          <ul>
-            <li><a href="#services">Construction Consultancy</a></li>
-            <li><a href="#services">Planning</a></li>
-            <li><a href="#services">RCC Design and Supervision</a></li>
-            <li><a href="#services">Estimation & Valuation</a></li>
-            <li><a href="#services">Many more...</a></li>
-          </ul>
-        </div>
+        
       </div>
     </div>
   </div>
