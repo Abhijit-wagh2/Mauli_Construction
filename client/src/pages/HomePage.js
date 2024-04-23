@@ -6,9 +6,9 @@ import Products from './Admin/Product.js';
 function HomePage() {
   const [auth , setAuth] = useAuth();
   return (
-    <Layout>
+      <Layout>
       <Products/>
-    </Layout>
+      </Layout>
   )
 }
 

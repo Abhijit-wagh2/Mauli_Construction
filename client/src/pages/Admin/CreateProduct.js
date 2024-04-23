@@ -51,10 +51,14 @@ function CreateProduct() {
       productData.append("quantity", quantity);
       productData.append("photo", photo);
       productData.append("category", category);
+      productData.append("shipping", shipping);
       setCategory("Project");
+      console.log(shipping);
+
 
       const{data} = await axios.post(`/api/v1/product/create-product`,productData);
       // /api/v1/auth/login
+      
 
       if (data?.success) {
         toast.success(data?.message);
