@@ -31,7 +31,7 @@ const Products = () => {
           <div className="d-flex flex-wrap">
             {products?.map((p) => (
              
-                <div className="card m-1 " style={{ width: 'mw-100', height: 'mh-100' }} >
+                <div className="card m-1 mx-auto" style={{ width: 'mw-100', height: 'mh-100' }} >
                   <img
                     src={`${process.env.REACT_APP_API}/api/v1/product/product-photo/${p._id}`}
                     className="card-img-top"
