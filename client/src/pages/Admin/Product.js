@@ -31,7 +31,7 @@ const Products = () => {
           <div className="d-flex flex-wrap">
             {products?.map((p) => (
              
-                <div className="card m-1 mx-auto" style={{ width: 'mw-100', height: 'mh-100' }} >
+                <div className="card m-1 mx-auto" style={{ width: '400px', height: 'mh-100' }} >
                   <img
                     src={`${process.env.REACT_APP_API}/api/v1/product/product-photo/${p._id}`}
                     className="card-img-top"
@@ -39,8 +39,8 @@ const Products = () => {
                   />
                   <div className="card-body"> 
                     <h5 className="card-title">{p.name}</h5>
-                    <p className="card-text"><span className="font-weight-bold"> Floor Dimension: </span> {p.description} </p>
-                    <p className="card-text"><span className="font-weight-bold"> Area: </span> {p.price} </p>
+                    <p className="card-text"><span className="font-weight-bold"> </span> {p.description} </p>
+                    <p className="card-text"><span className="font-weight-bold"> </span> {p.price} </p>
                     <p className="card-text">This plan package includes: {p.quantity}</p>
                   </div> 
                 </div>
