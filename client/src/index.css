@@ -32,9 +32,18 @@ code {
   box-shadow: 0 8px 6px -6px gray;
   --webkit-box-shadow: 0 8px 6px -6px gray;
   border-bottom: solid gray !important;
+  margin-bottom:20px;
 }
-
-
+.list-group{
+  margin-left:60px;
+  margin-top:30px;
+}
+.list-group-item{
+  width:150px;
+}
+.card-text_{
+  margin-bottom:10px;
+}
 .nav-link {
   color:#fff;
   font-weight: 300 !important;
@@ -51,4 +60,7 @@ code {
   font-weight: 700;
   font-family: "roboto", sans-serif;
   letter-spacing: 3px;
+}
+.card-body{
+  color:black;
 }

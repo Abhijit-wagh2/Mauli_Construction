@@ -33,7 +33,7 @@ function DummyProduct() {
             <AdminMenu />
           </div>
           <div className="col-md-9 ">
-     <h1 className="text-center">All Products List</h1>       
+     <h1 className="text-center">All Projects</h1>       
             <div className="d-flex flex-wrap">
               {products?.map((p) => (
                 <Link
@@ -50,6 +50,8 @@ function DummyProduct() {
                     <div className="card-body">
                       <h5 className="card-title_">{p.name}</h5>
                       <p className="card-text_">{p.description}</p>
+                      <p className="card-text_">{p.price}</p>
+                      <p className="card-text_">{p.quantity}</p>
                     </div>
                   </div>
                 </Link>

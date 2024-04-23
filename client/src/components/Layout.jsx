@@ -8,7 +8,7 @@ import Features from './Features';
 import Services from './Services';
 import Home from './Home';
 import About from './About';
-
+import Techniques from './Techniques';
 function Layout({children}) {
   return (
     <div>
@@ -22,8 +22,11 @@ function Layout({children}) {
             {children}
         </main>
         <Blog/>
+        
         <ReachUs/>
         <Footer/>
+        <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
     </div>
   )
 }
