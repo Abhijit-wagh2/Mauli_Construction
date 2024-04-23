@@ -41,7 +41,7 @@ const Products = () => {
                     <h5 className="card-title">{p.name}</h5>
                     <p className="card-text"><span className="font-weight-bold"> </span> {p.description} </p>
                     <p className="card-text"><span className="font-weight-bold"> </span> {p.price} </p>
-                    <p className="card-text">This plan package includes: {p.quantity}</p>
+                    <p className="card-text">{p.quantity}</p>
                   </div> 
                 </div>
               
