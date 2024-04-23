@@ -31,7 +31,7 @@ const MyComponent = ({ src }) => {
         src={src}
         className="card-img-top"
         alt=""
-        style={{ width: '100%', height: '100%' }}
+        style={{ width: '100%', height: "280px" }}
       />
     </div>
   );
@@ -75,7 +75,7 @@ const Products = () => {
               }}
             >
               <MyComponent
-                src={`${process.env.REACT_APP_API}/api/v1/product/product-photo/${p._id}`}
+                src={`${process.env.REACT_APP_API}/api/v1/product/product-photo/${p._id}`} 
               />
               <div className="card-body">
                 <h5 className="card-title">{p.name}</h5>
