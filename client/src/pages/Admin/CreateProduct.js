@@ -15,7 +15,7 @@ function CreateProduct() {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
-  const [category, setCategory] = useState("");
+  const [category, setCategory] = useState("new");
   const [quantity, setQuantity] = useState("");
   const [shipping, setShipping] = useState("");
   const [photo, setPhoto] = useState("");
@@ -45,16 +45,15 @@ function CreateProduct() {
     e.preventDefault();
     try {
       const productData = new FormData();
+      setCategory("Project");
       productData.append("name", name);
       productData.append("description", description);
       productData.append("price", price);
       productData.append("quantity", quantity);
       productData.append("photo", photo);
-      productData.append("category", category);
       productData.append("shipping", shipping);
-      setCategory("Project");
+      productData.append("category", category);
       console.log(shipping);
-
 
       const{data} = await axios.post(`/api/v1/product/create-product`,productData);
       // /api/v1/auth/login
