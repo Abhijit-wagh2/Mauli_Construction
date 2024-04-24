@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect,useState } from 'react'
 import Layout from '../../components/Layout'
 import AdminMenu from '../../components/AdminMenu'
 import toast from "react-hot-toast";
@@ -11,7 +11,7 @@ const { Option } = Select;
 
 function CreateProduct() {
   const navigate = useNavigate();
-  // const [categories, setCategories] = useState([]);
+  const [categories, setCategories] = useState([]);
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
@@ -22,23 +22,23 @@ function CreateProduct() {
 
 
 
-  //get all cat
-  // const getAllCategory = async() => {
-  //   try{
-  //     const{data} = await axios.get(`${process.env.REACT_APP_API}/api/v1/category/get-category`);
+ // get all cat
+  const getAllCategory = async() => {
+    try{
+      const{data} = await axios.get(`/api/v1/category/get-category`);
 
-  //     if(data.success){
-  //       setCategories(data.category);
-  //     }
-  //   }catch(error){
-  //     console.log(error);
-  //     toast.error('Something went wrong');
-  //   }
-  // };
+      if(data.success){
+        setCategories(data.category);
+      }
+    }catch(error){
+      console.log(error);
+      toast.error('Something went wrong');
+    }
+  };
 
-  // useEffect(() => {
-  //   getAllCategory();
-  // }, []);
+  useEffect(() => {
+    getAllCategory();
+  }, []);
 
   //create product function
   const handleCreate = async (e) => {
@@ -86,7 +86,7 @@ function CreateProduct() {
         <div className="col-md-9">
           <h1>Create Product</h1>
           <div className="m-1 w-75">
-            {/* <Select
+            <Select
               variant = {false}
               placeholder="Select a category"
               size="large"
@@ -101,7 +101,7 @@ function CreateProduct() {
                   {c.name}
                 </Option>
               ))}
-            </Select> */}
+            </Select>
             <div className="mb-3">
               <label className="btn btn-outline-secondary col-md-12">
                 {photo ? photo.name : "Upload Photo"}

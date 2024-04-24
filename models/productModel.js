@@ -18,8 +18,9 @@ const productSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    category: {               //1 , 2 , 3  
-      type: String,
+    category: {
+      type: mongoose.ObjectId,
+      ref: "Category",
       required: true,
     },
     quantity: {                 //this plan include

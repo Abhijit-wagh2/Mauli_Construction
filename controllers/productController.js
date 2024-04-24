@@ -6,7 +6,7 @@ import fs from "fs";
 
 export const createProductController = async (req, res) => {
     try {
-      const { name, description, price, category, quantity, shipping } =
+      const { name, description, category, shipping } =
         req.fields;
       const { photo } = req.files;
       //validation
@@ -15,12 +15,8 @@ export const createProductController = async (req, res) => {
           return res.status(500).send({ error: "Name is Required" });
         case !description:
           return res.status(500).send({ error: "Description is Required" });
-        case !price:
-          return res.status(500).send({ error: "Price is Required" });
         case !category:
           return res.status(500).send({ error: "Category is Required" });
-        case !quantity:
-          return res.status(500).send({ error: "Quantity is Required" });
         case photo && photo.size > 10000000:
           return res
             .status(500)
@@ -35,7 +31,7 @@ export const createProductController = async (req, res) => {
       await products.save();
       res.status(201).send({
         success: true,
-        message: "Product Created Successfully",
+        message: "Data Added Successfully",
         products,
       });
     } catch (error) {
@@ -76,25 +72,25 @@ export const getProductController = async (req, res) => {
 
 //   // get single product
 export const getSingleProductController = async (req, res) => {
-    try {
-      const product = await productModel
-        .findOne({ slug: req.params.slug })
-        .select("-photo")
-
-      res.status(200).send({
-        success: true,
-        message: "Single Product Fetched",
-        product,
-      });
-    } catch (error) {
-      console.log(error);
-      res.status(500).send({
-        success: false,
-        message: "Eror while getitng single product",
-        error,
-      });
-    }
-  };
+  try {
+    const product = await productModel
+      .findOne({ slug: req.params.slug })
+      .select("-photo")
+      .populate("category");
+    res.status(200).send({
+      success: true,
+      message: "Single Product Fetched",
+      product,
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(500).send({
+      success: false,
+      message: "Eror while getitng single product",
+      error,
+    });
+  }
+};
 
 
 //   // get photo
@@ -283,100 +279,48 @@ export const productListController = async (req, res) => {
 // };
 
 // // similar products
-// export const realtedProductController = async (req, res) => {
-//   try {
-//     const { pid, cid } = req.params;
-//     const products = await productModel
-//       .find({
-//         category: cid,
-//         _id: { $ne: pid },
-//       })
-//       .select("-photo")
-//       .limit(3)
-//       .populate("category");
-//     res.status(200).send({
-//       success: true,
-//       products,
-//     });
-//   } catch (error) {
-//     console.log(error);
-//     res.status(400).send({
-//       success: false,
-//       message: "error while geting related product",
-//       error,
-//     });
-//   }
-// };
+export const realtedProductController = async (req, res) => {
+  try {
+    const { pid, cid } = req.params;
+    const products = await productModel
+      .find({
+        category: cid,
+        _id: { $ne: pid },
+      })
+      .select("-photo")
+      .limit(3)
+      .populate("category");
+    res.status(200).send({
+      success: true,
+      products,
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(400).send({
+      success: false,
+      message: "error while geting related product",
+      error,
+    });
+  }
+};
 
 // // get prdocyst by catgory
-// export const productCategoryController = async (req, res) => {
-//   try {
-//     console.log("hiei")
-//     const category = await categoryModel.findOne({ slug: req.params.slug });
-//     const products = await productModel.find({ category }).populate("category");
-//     res.status(200).send({
-//       success: true,
-//       category,
-//       products,
-//     });
-//   } catch (error) {
-//     console.log(error);
-//     res.status(400).send({
-//       success: false,
-//       error,
-//       message: "Error While Getting products",
-//     });
-//   }
-// };
-
-
-// //payment gateway api
-// export const braintreeTokenController = async(req,res) =>{
-
-//   try {
-//     gateway.clientToken.generate({}, function (err, response) {
-//       if (err) {
-//         res.status(500).send(err);
-//       } else {
-//         res.send(response);
-//       }
-//     });
-//   } catch (error) {
-//     console.log(error);
-//   }
-
-// }
-
-// //payment
-// export const braintreePaymentController = async(req,res) =>{
-//   try {
-//     const { nonce, cart } = req.body;
-//     let total = 0;
-//     cart.map((i) => {
-//       total += i.price;
-//     });
-//     let newTransaction = gateway.transaction.sale(
-//       {
-//         amount: total,
-//         paymentMethodNonce: nonce,
-//         options: {
-//           submitForSettlement: true,
-//         },
-//       },
-//       function (error, result) {
-//         if (result) {
-//           const order = new orderModel({
-//             products: cart,
-//             payment: result,
-//             buyer: req.user._id,
-//           }).save();
-//           res.json({ ok: true });
-//         } else {
-//           res.status(500).send(error);
-//         }
-//       }
-//     );
-//   } catch (error) {
-//     console.log(error);
-//   }
-// }
+export const productCategoryController = async (req, res) => {
+  try {
+    console.log("hiei")
+    const category = await categoryModel.findOne({ slug: req.params.slug });
+    const products = await productModel.find({ category }).populate("category");
+    res.status(200).send({
+      success: true,
+      category,
+      products,
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(400).send({
+      success: false,
+      error,
+      message: "Error While Getting products",
+    });
+  }
+};
