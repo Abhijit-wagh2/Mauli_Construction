@@ -1,16 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-// import toast from "react-hot-toast";
-import "../../styles/Homepage.css";
-import Swiper from 'swiper'
-import AdminMenu from "../../components/AdminMenu";
-import Layout from "../../components/Layout";
+import "../../../styles/Homepage.css";
 import { AiOutlineReload } from "react-icons/ai";
-import ReviewCard from '../../components/BlogCard'
-import ClientNavbar from "../../components/Nav/ClientNavbar";
+import AdminMenu from "../../../components/AdminMenu";
 
 const MyComponent = ({ src }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -44,7 +38,7 @@ const MyComponent = ({ src }) => {
   );
 };
 
-const Products = () => {
+const ArticleSection = () => {
   const navigate = useNavigate();
   // const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
@@ -109,72 +103,42 @@ const Products = () => {
 
 
   useEffect(() => {
-    if (page === 5) return;
+    
+    if (page === 7) return;
     loadMore();
   }, [page]);
 
 
-  useEffect(() => {
-    new Swiper('.slides-2', {
-      // Configure swiper options here
-      slidesPerView: 1,
-      spaceBetween: 20,
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-    });
-  }, []);
+ 
  
 
+
   return (
+
     <>
-    {/* Project Component */}
     <div className="row">
-        <div className="col-md-12">
-        <div className="section-header section-bg" style={{ padding: "50px" }}>
-          <h2 style={{ paddingTop: "20px" }}>Portfolio</h2>
+    <div className="col-md-12">
+    <div className="section-header section-bg" style={{ padding: "50px" }}>
+          <h2 style={{ paddingTop: "20px" }}>Articles</h2>
         </div>
           <div className="d-flex flex-wrap">
             {products
-              ?.filter(p => p.category === '662928eb5a02dfe6604fceb5') // Filter products by category
+              ?.filter(p => p.category === '6629e72c2b170502ef1ac965') // Filter products by category
               .map(p => (
-                <div className="card m-1 mx-auto" key={p._id}>
-                  <img
-                    src={`/api/v1/product/product-photo/${p._id}`}
-                    className="card-img-top"
-                    style={{ width: '500px', height: '300px' }}
-                    alt={p.name}
-                  />
-                  
-                  <div className="card-body">
-                    <div className="card-name-price">
-                      <h5 className="card-title">{p.name}</h5>
-                      <p className="card-text">
-                        {p.description.substring(0, 60)}...
-                      </p>
-                      <p className="card-title card-price">
-                        {p.price}
-                      </p>
-                    </div>
-                    
+                <div className="card-body mx-auto" style={{ margin: '1%', padding: '2%'  }}>
+              <div className="card-name-price">
+                <h4 className="card-title">{p.name}</h4>
+              </div>
+              <p className="card-text" >
+                {p.description}
+              </p>
+            </div>
 
-                    <div className="card-name-price">
-                      <button
-                        className="btn btn-info ms-1"
-                        onClick={() => navigate(`/product/${p.slug}`)}
-                      >
-                        More Details
-                      </button>
-                    </div>
-                  </div>
-                </div>
               ))}
           </div>
-        </div>
 
-
-        <div className="m-2 p-3">
+          </div>
+          <div className="m-2 p-3">
             {products && products.length < total && (
               <button
                 className="btn loadmore"
@@ -195,8 +159,11 @@ const Products = () => {
             )}
           </div>
         </div>
+    
+    
+
     </>
   );
 };
 
-export default Products;
+export default ArticleSection;

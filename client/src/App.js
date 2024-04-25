@@ -15,6 +15,7 @@ import Products from "./pages/Admin/Product.js";
 import CreateCategory from "./pages/Admin/CreateCategory.js";
 import ProductDetails from "./pages/Admin/ProductDetails.js";
 import CreateBlog from "./pages/Admin/CreateBlog.js";
+import ProjectPage from "./pages/ProjectPage.js";
 
 function App() {
   return (
@@ -36,7 +37,7 @@ function App() {
 
         <Route path="/dashboard/admin/create-product" element={<CreateProduct />} />
 
-        <Route path="/dashboard/admin/product_dummy" element={<Products/>} />
+        <Route path="/dashboard/admin/product_dummy" element={<ProjectPage/>} />
         <Route path="/dashboard/admin/product" element={<DummyProduct/>} />
         
 

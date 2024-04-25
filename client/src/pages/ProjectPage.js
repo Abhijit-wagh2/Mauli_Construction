@@ -1,16 +1,14 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
-// import toast from "react-hot-toast";
-import "../../styles/Homepage.css";
+// import "../../styles/Homepage.css";
+import "../styles/Homepage.css";
 import Swiper from 'swiper'
-import AdminMenu from "../../components/AdminMenu";
-import Layout from "../../components/Layout";
 import { AiOutlineReload } from "react-icons/ai";
-import ReviewCard from '../../components/BlogCard'
-import ClientNavbar from "../../components/Nav/ClientNavbar";
+import Footer from "../components/Footer";
+import ClientNavbar from "../components/Nav/ClientNavbar";
+
+
 
 const MyComponent = ({ src }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -44,7 +42,7 @@ const MyComponent = ({ src }) => {
   );
 };
 
-const Products = () => {
+const ProjectPage = () => {
   const navigate = useNavigate();
   // const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
@@ -129,6 +127,7 @@ const Products = () => {
 
   return (
     <>
+    <ClientNavbar/>
     {/* Project Component */}
     <div className="row">
         <div className="col-md-12">
@@ -195,8 +194,9 @@ const Products = () => {
             )}
           </div>
         </div>
+        <Footer/>
     </>
   );
 };
 
-export default Products;
+export default ProjectPage
