@@ -46,7 +46,7 @@ function DummyProduct() {
                     
                     <div className="card-body">
                       <h5 className="card-title_">{p.name}</h5>
-                      <p className="card-text_">{p.description.substring(0, 90)}</p>
+                      <p className="card-text_"><pre>{p.description.substring(0, 90)}</pre></p>
 
                       <p className="card-text_">{p.price}</p>
                       <p className="card-text_">{p.quantity}</p>

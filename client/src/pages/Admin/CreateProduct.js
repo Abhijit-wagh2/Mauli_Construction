@@ -58,7 +58,7 @@ function CreateProduct() {
       if (data?.success) {
         toast.success(data?.message);
       } else {
-        toast("Product Created Successfully");
+        toast("Project Created Successfully");
         navigate("/dashboard/admin/products");
       }
       } catch (error) {
