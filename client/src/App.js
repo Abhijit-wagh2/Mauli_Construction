@@ -9,13 +9,16 @@ import AdminDashboard from "./pages/Admin/AdminDashboard.js";
 import CreateProduct from "./pages/Admin/CreateProduct.js";
 
 import UpdateProduct from "./pages/Admin/UpdateProduct.js";
-import DummyProduct from "./pages/Admin/DummyProduct.js";
+import DummyProduct from "./pages/Admin/Section/BlogView.js";
 import './App.css';
 import Products from "./pages/Admin/Product.js";
 import CreateCategory from "./pages/Admin/CreateCategory.js";
 import ProductDetails from "./pages/Admin/ProductDetails.js";
 import CreateBlog from "./pages/Admin/CreateBlog.js";
 import ProjectPage from "./pages/ProjectPage.js";
+import BlogView from "./pages/Admin/Section/BlogView.js";
+import ProjectView from "./pages/Admin/Section/ProjectView.js";
+import ArticleView from "./pages/Admin/Section/ArticleView.js";
 
 function App() {
   return (
@@ -38,9 +41,11 @@ function App() {
         <Route path="/dashboard/admin/create-product" element={<CreateProduct />} />
 
         <Route path="/dashboard/admin/product_dummy" element={<ProjectPage/>} />
-        <Route path="/dashboard/admin/product" element={<DummyProduct/>} />
-        
+        <Route path="/dashboard/admin/blog" element={<BlogView/>} />
+        <Route path="/dashboard/admin/project" element={<ProjectView/>} />
+        <Route path="/dashboard/admin/articles" element={<ArticleView/>} />
 
+        
         <Route path="/dashboard/admin/product/:slug" element={<UpdateProduct/>} />
 
 

@@ -2,17 +2,17 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
-import AdminMenu from "../../components/AdminMenu";
-import Layout from "../../components/Layout";
-import NavbarTop from "../../components/NavbarTop";
+import AdminMenu from "../../../components/AdminMenu";
+import Layout from "../../../components/Layout";
+import NavbarTop from "../../../components/NavbarTop";
 
-function DummyProduct() {
+
+function ArticleView() {
     const [products, setProducts] = useState([]);
-
     //getall products
     const getAllProducts = async () => {
       try {
-        const { data } = await axios.get(`/api/v1/product/get-product`);
+        const { data } = await axios.get(`/api/v1/product/product-articles`);
         setProducts(data.products);
       } catch (error) {
         console.log(error);
@@ -61,4 +61,4 @@ function DummyProduct() {
     );
 }
 
-export default DummyProduct
+export default ArticleView

@@ -3,7 +3,7 @@ import express from "express";
 // import { braintreePaymentController, braintreeTokenController, createProductController, deleteProductController, getProductController, getSingleProductController, productCategoryController, productCountController, productFiltersController, productListController, productPhotoController, realtedProductController, searchProductController, updateProductController } from "../controllers/productController.js";
 import formidable from "express-formidable";
 import { isAdmin, requiredSignIn } from "../middlewares/authMiddleware.js";
-import { createProductController, deleteProductController, getProductController, getSingleProductController, productCategoryController, productCountController, productListController, productPhotoController, realtedProductController, updateProductController } from "../controllers/productController.js";
+import { createProductController, deleteProductController, getProductController, getSingleProductController, productCategoryArticle, productCategoryController, productCategoryControllerProject, productCountController, productListController, productPhotoController, realtedProductController, updateProductController } from "../controllers/productController.js";
 
 
 const router = express.Router();
@@ -44,7 +44,10 @@ router.get('/product-list/:page',productListController);
 router.get("/related-product/:pid/:cid", realtedProductController);
 
 //category wise product
-router.get("/product-category/:slug", productCategoryController);
+router.get("/product-category", productCategoryController);
+router.get("/product-category-project", productCategoryControllerProject);
+router.get("/product-articles", productCategoryArticle);
+
 
 
 // //payement routes

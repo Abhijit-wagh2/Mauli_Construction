@@ -257,6 +257,32 @@ export const productListController = async (req, res) => {
 
 
 
+export const ListForProject = async (req, res) => {
+  try {
+    const perPage = 4;
+    const page = req.params.page ? req.params.page : 1;
+    const products = await productModel
+      .find({})
+      .select("-photo")
+      .skip((page - 1) * perPage)
+      .limit(perPage)
+      .sort({ createdAt: -1 });
+    res.status(200).send({
+      success: true,
+      products,
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(400).send({
+      success: false,
+      message: "error in per page ctrl",
+      error,
+    });
+  }
+};
+
+
+
 
 // // search product
 // export const searchProductController = async (req, res) => {
@@ -311,7 +337,49 @@ export const realtedProductController = async (req, res) => {
 export const productCategoryController = async (req, res) => {
   try {
     console.log("hiei")
-    const category = await categoryModel.findOne({ slug: req.params.slug });
+    const category = '6629274580fc06b8bac76f3b';
+    const products = await productModel.find({ category }).populate("category");
+    res.status(200).send({
+      success: true,
+      category,
+      products,
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(400).send({
+      success: false,
+      error,
+      message: "Error While Getting products",
+    });
+  }
+};
+
+
+export const productCategoryControllerProject = async (req, res) => {
+  try {
+    console.log("hiei")
+    const category = '662928eb5a02dfe6604fceb5';
+    const products = await productModel.find({ category }).populate("category");
+    res.status(200).send({
+      success: true,
+      category,
+      products,
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(400).send({
+      success: false,
+      error,
+      message: "Error While Getting products",
+    });
+  }
+};
+
+
+export const productCategoryArticle = async (req, res) => {
+  try {
+    console.log("hiei")
+    const category = '6629e72c2b170502ef1ac965';
     const products = await productModel.find({ category }).populate("category");
     res.status(200).send({
       success: true,
