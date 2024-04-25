@@ -13,11 +13,9 @@ function Footer() {
           <div className="footer-info">
             <h3>Mauli Construction and <br />Interior Services</h3>
             <p>
-              Main Office : 26, Renuka Complex,<br/>
-              near Bus Stand, Bajartal,<br/> 
+              Main Office : 26, Renuka Complex,near Bus Stand, Bajartal,<br/> 
               Chandwad, Maharashtra 423101<br/><br/>
-              Branch Office : Near HDFC bank, <br/>
-              service road, Vadalibhoi<br/> 
+              Branch Office : Near HDFC bank,service road, Vadalibhoi<br/> 
               Chandwad, Maharashtra 423101<br/><br/>
               <strong>Phone:</strong> +91 7387171034<br/>
               <strong>Email:</strong> mangeshshelke10@gmail.com<br/>
@@ -57,9 +55,7 @@ function Footer() {
               <li><a href="#services">RCC Design and Supervision</a></li>
               <li><a href="#services">Estimation & Valuation</a></li>
               <li><a href="#services">3D Elevations</a></li>
-              <li><a href="#services">Exterior and Interior Designing</a></li>
-              <li><a href="#services">N.A. Layouts</a></li>
-              <li><a href="#services">Land Developers & Construction</a></li>
+              
             </ul>
           </div>
 
