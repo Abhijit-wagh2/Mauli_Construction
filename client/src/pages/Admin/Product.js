@@ -5,10 +5,11 @@ import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 // import toast from "react-hot-toast";
 import "../../styles/Homepage.css";
+import Swiper from 'swiper'
 import AdminMenu from "../../components/AdminMenu";
 import Layout from "../../components/Layout";
 import { AiOutlineReload } from "react-icons/ai";
-
+import ReviewCard from '../../components/BlogCard'
 
 const MyComponent = ({ src }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -74,7 +75,7 @@ const Products = () => {
   const getAllProducts = async () => {
     try {
       setLoading(true);
-      const { data } = await axios.get(`${process.env.REACT_APP_API}/api/v1/product/product-list/${page}`);
+      const { data } = await axios.get(`$/api/v1/product/product-list/${page}`);
       setLoading(false);
       setProducts(data.products);
     } catch (error) {
@@ -110,6 +111,19 @@ const Products = () => {
     if (page === 5) return;
     loadMore();
   }, [page]);
+
+
+  useEffect(() => {
+    new Swiper('.slides-2', {
+      // Configure swiper options here
+      slidesPerView: 1,
+      spaceBetween: 20,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+    });
+  }, []);
  
 
 
@@ -150,8 +164,10 @@ const Products = () => {
         </div>
       </div>
     </div> */}
-    <div className="row">
 
+
+    {/* Project Component */}
+    <div className="row">
         <div className="col-md-12">
         <div className="section-header section-bg" style={{ padding: "50px" }}>
           <h2 style={{ paddingTop: "20px" }}>Portfolio</h2>
@@ -167,20 +183,19 @@ const Products = () => {
                     style={{ width: '500px', height: '300px' }}
                     alt={p.name}
                   />
-                  <p className="card-text">{p.category}</p>
+                  
                   <div className="card-body">
                     <div className="card-name-price">
                       <h5 className="card-title">{p.name}</h5>
-                      <h5 className="card-title card-price">
-                        {p.price.toLocaleString("en-US", {
-                          style: "currency",
-                          currency: "USD",
-                        })}
-                      </h5>
+                      <p className="card-text">
+                        {p.description.substring(0, 60)}...
+                      </p>
+                      <p className="card-title card-price">
+                        {p.price}
+                      </p>
                     </div>
-                    <p className="card-text">
-                      {p.description.substring(0, 60)}...
-                    </p>
+                    
+
                     <div className="card-name-price">
                       <button
                         className="btn btn-info ms-1"
@@ -219,30 +234,35 @@ const Products = () => {
         </div>
 
 
+  {/* Blogs Component */}
 
     <div className="row">
     <div className="col-md-12">
+      
     <div className="section-header section-bg" style={{ padding: "50px" }}>
           <h2 style={{ paddingTop: "20px" }}>Blogs</h2>
         </div>
-          <div className="d-flex flex-wrap">
+
+
+          <div className="d-flex flex-wrap" >
             {products
               ?.filter(p => p.category === '6629274580fc06b8bac76f3b') // Filter products by category
               .map(p => (
-                <div className="card m-3 mx-auto" key={p._id} style={{ width: '33%' }}>
+                <div className="card m-3 mx-auto" key={p._id} >
+              
+          <section id="testimonials" className="testimonials section-bg">
+             <div className="container" data-aos="fade-up">
+                      <div className="slides-2 swiper">
+                        <div className="swiper-wrapper">
+                        <ReviewCard name={p.name} identity={p.name} review={p.description}/>
+                      </div>
+                    <div className="swiper-pagination"></div>
+                </div>
+              </div>
+          </section>
 
-                  <div className="card-body">
-                    <div className="card-name-price">
-                      <h5 className="card-title">{p.name}</h5>
-                      
-                    </div>
-                    <p className="card-text">
-                   
-                      {p.description}
-                     
-                    </p> 
 
-                  </div>
+            
                 </div>
               ))}
           </div>
@@ -271,8 +291,8 @@ const Products = () => {
         </div>
 
 
-
-        <div className="row">
+{/* Articles Component */}
+    <div className="row">
     <div className="col-md-12">
     <div className="section-header section-bg" style={{ padding: "50px" }}>
           <h2 style={{ paddingTop: "20px" }}>Articles</h2>

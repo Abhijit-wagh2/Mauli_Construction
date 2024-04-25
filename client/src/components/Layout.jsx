@@ -16,12 +16,12 @@ function Layout({children}) {
         <About/>
         <Services/>
         <Features/>
-        
+        <Blog/>
         <main>
         <Toaster />
             {children}
         </main>
-        <Blog/>
+        
         
         <ReachUs/>
         <Footer/>

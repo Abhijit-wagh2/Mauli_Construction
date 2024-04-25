@@ -1,13 +1,14 @@
+import toast, { Toaster } from 'react-hot-toast';
 import React, { useEffect,useState } from 'react'
 import Layout from '../../components/Layout'
 import AdminMenu from '../../components/AdminMenu'
-import toast from "react-hot-toast";
 import axios from "axios";
 import { Select } from "antd";
 import { useNavigate } from "react-router-dom";
 import NavbarTop from '../../components/NavbarTop';
 const { Option } = Select;
 
+const notify = () => toast('Here is your toast.');
 
 function CreateBlog() {
   const navigate = useNavigate();
@@ -60,12 +61,14 @@ function CreateBlog() {
       if (data?.success) {
         toast.success(data?.message);
       } else {
-        toast("Product Created Successfully");
+        notify();
+        //toast("Project Created Successfully");
         navigate("/dashboard/admin/products");
       }
     } catch (error) {
       console.log(error);
-      toast.error("something went wrong");
+      notify();
+      //toast.error("something went wrong");
     }
   };
 

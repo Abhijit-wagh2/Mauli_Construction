@@ -1,6 +1,6 @@
+import toast, { Toaster } from 'react-hot-toast';
 import React, { useEffect, useState } from 'react'
 import AdminMenu from '../../components/AdminMenu'
-import toast from "react-hot-toast";
 import axios from "axios";
 import CategoryForm from '../../components/Form/CategoryForm.js';
 import { Modal } from "antd";

@@ -1,7 +1,7 @@
+import toast, { Toaster } from 'react-hot-toast';
 import React, { useEffect,useState } from 'react'
 import Layout from '../../components/Layout'
 import AdminMenu from '../../components/AdminMenu'
-import toast from "react-hot-toast";
 import axios from "axios";
 import { Select } from "antd";
 import { useNavigate } from "react-router-dom";
