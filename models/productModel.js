@@ -12,11 +12,9 @@ const productSchema = new mongoose.Schema(
     },
     description: {        //floor dimension
       type: String,
-      required: true,
     },
     price: {                //area range
       type: String,
-      required: true,
     },
     category: {
       type: mongoose.ObjectId,
@@ -25,7 +23,6 @@ const productSchema = new mongoose.Schema(
     },
     quantity: {                 //this plan include
       type: String,
-      required: true,
     },
     photo: {        
       data: Buffer,

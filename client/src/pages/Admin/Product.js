@@ -48,7 +48,7 @@ const Products = () => {
   const [categories, setCategories] = useState([]);
   const [checked, setChecked] = useState([]);
   // const [radio, setRadio] = useState([]);
-  const [total, setTotal] = useState(0);
+  const [total, setTotal] = useState(4);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
   const [products, setProducts] = useState([]);
@@ -107,7 +107,7 @@ const Products = () => {
 
 
   useEffect(() => {
-    if (page === 2) return;
+    if (page === 5) return;
     loadMore();
   }, [page]);
  
@@ -151,55 +151,102 @@ const Products = () => {
       </div>
     </div> */}
     <div className="row">
-    <div className="col-md-12">
-          <h1 className="text-center">All Products</h1>
+
+        <div className="col-md-12">
+        <div className="section-header section-bg" style={{ padding: "50px" }}>
+          <h2 style={{ paddingTop: "20px" }}>Portfolio</h2>
+        </div>
           <div className="d-flex flex-wrap">
-            {products?.map((p) => (
-              <div className="card m-1 mx-auto" key={p._id}>
-                <img
-                  src={`/api/v1/product/product-photo/${p._id}`}
-                  className="card-img-top"
-                   style={{ width: '500px', height: '300px' }}
-                  alt={p.name}
-                />
-                <div className="card-body">
-                  <div className="card-name-price">
-                    <h5 className="card-title">{p.name}</h5>
-                    <h5 className="card-title card-price">
-                      {p.price.toLocaleString("en-US", {
-                        style: "currency",
-                        currency: "USD",
-                      })}
-                    </h5>
-                  </div>
-                  <p className="card-text ">
-                    {p.description.substring(0, 60)}...
-                  </p>
-                  <div className="card-name-price">
-                    <button
-                      className="btn btn-info ms-1"
-                      onClick={() => navigate(`/product/${p.slug}`)}
-                    >
-                      More Details
-                    </button>
-                    {/* <button
-                      className="btn btn-dark ms-1"
-                      onClick={() => {
-                        setCart([...cart, p]);
-                        localStorage.setItem(
-                          "cart",
-                          JSON.stringify([...cart, p])
-                        );
-                        toast.success("Item Added to cart");
-                      }}
-                    >
-                      ADD TO CART
-                    </button> */}
+            {products
+              ?.filter(p => p.category === '662928eb5a02dfe6604fceb5') // Filter products by category
+              .map(p => (
+                <div className="card m-1 mx-auto" key={p._id}>
+                  <img
+                    src={`/api/v1/product/product-photo/${p._id}`}
+                    className="card-img-top"
+                    style={{ width: '500px', height: '300px' }}
+                    alt={p.name}
+                  />
+                  <p className="card-text">{p.category}</p>
+                  <div className="card-body">
+                    <div className="card-name-price">
+                      <h5 className="card-title">{p.name}</h5>
+                      <h5 className="card-title card-price">
+                        {p.price.toLocaleString("en-US", {
+                          style: "currency",
+                          currency: "USD",
+                        })}
+                      </h5>
+                    </div>
+                    <p className="card-text">
+                      {p.description.substring(0, 60)}...
+                    </p>
+                    <div className="card-name-price">
+                      <button
+                        className="btn btn-info ms-1"
+                        onClick={() => navigate(`/product/${p.slug}`)}
+                      >
+                        More Details
+                      </button>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
           </div>
+        </div>
+
+
+        <div className="m-2 p-3">
+            {products && products.length < total && (
+              <button
+                className="btn loadmore"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setPage(page + 1);
+                }}
+              >
+                {loading ? (
+                  "Loading ..."
+                ) : (
+                  <>
+                    {" "}
+                    Loadmore <AiOutlineReload />
+                  </>
+                )}
+              </button>
+            )}
+          </div>
+        </div>
+
+
+
+    <div className="row">
+    <div className="col-md-12">
+    <div className="section-header section-bg" style={{ padding: "50px" }}>
+          <h2 style={{ paddingTop: "20px" }}>Blogs</h2>
+        </div>
+          <div className="d-flex flex-wrap">
+            {products
+              ?.filter(p => p.category === '6629274580fc06b8bac76f3b') // Filter products by category
+              .map(p => (
+                <div className="card m-3 mx-auto" key={p._id} style={{ width: '33%' }}>
+
+                  <div className="card-body">
+                    <div className="card-name-price">
+                      <h5 className="card-title">{p.name}</h5>
+                      
+                    </div>
+                    <p className="card-text">
+                   
+                      {p.description}
+                     
+                    </p> 
+
+                  </div>
+                </div>
+              ))}
+          </div>
+
           </div>
           <div className="m-2 p-3">
             {products && products.length < total && (
@@ -222,6 +269,53 @@ const Products = () => {
             )}
           </div>
         </div>
+
+
+
+        <div className="row">
+    <div className="col-md-12">
+    <div className="section-header section-bg" style={{ padding: "50px" }}>
+          <h2 style={{ paddingTop: "20px" }}>Articles</h2>
+        </div>
+          <div className="d-flex flex-wrap">
+            {products
+              ?.filter(p => p.category === '6629e72c2b170502ef1ac965') // Filter products by category
+              .map(p => (
+                <div className="card-body mx-auto" style={{ margin: '1%', padding: '2%'  }}>
+              <div className="card-name-price">
+                <h4 className="card-title">{p.name}</h4>
+              </div>
+              <p className="card-text" >
+                {p.description}
+              </p>
+            </div>
+
+              ))}
+          </div>
+
+          </div>
+          <div className="m-2 p-3">
+            {products && products.length < total && (
+              <button
+                className="btn loadmore"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setPage(page + 1);
+                }}
+              >
+                {loading ? (
+                  "Loading ..."
+                ) : (
+                  <>
+                    {" "}
+                    Loadmore <AiOutlineReload />
+                  </>
+                )}
+              </button>
+            )}
+          </div>
+        </div>
+    
     
 
     </>

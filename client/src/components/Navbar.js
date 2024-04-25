@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { BsList } from "react-icons/bs";
 import logo from '../components/img/logonobg.png';
 import { NavLink, Link } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
+
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -25,6 +27,7 @@ function Navbar() {
 
   return (
     <>
+      <Toaster />
       <div id="navbar_2" className="navbar_2">
         <div className='logo'><img src={logo} alt="" /></div>
         <ul className='links'>

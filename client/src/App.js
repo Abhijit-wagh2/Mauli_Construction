@@ -14,6 +14,7 @@ import './App.css';
 import Products from "./pages/Admin/Product.js";
 import CreateCategory from "./pages/Admin/CreateCategory.js";
 import ProductDetails from "./pages/Admin/ProductDetails.js";
+import CreateBlog from "./pages/Admin/CreateBlog.js";
 
 function App() {
   return (
@@ -45,6 +46,8 @@ function App() {
         <Route path="/dashboard/admin/create-category" element={<CreateCategory/>} />
       
         <Route path="/product/:slug" element={<ProductDetails />} />
+
+        <Route path="/dashboard/admin/create-blog" element={<CreateBlog/>} />
 
         
 

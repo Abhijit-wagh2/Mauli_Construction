@@ -6,10 +6,13 @@ import fs from "fs";
 
 export const createProductController = async (req, res) => {
     try {
-      const { name, description, category, shipping } =
+      const { name, description, category} =
         req.fields;
       const { photo } = req.files;
       //validation
+      if(!description) description ="";
+      // if(!category) category ="";
+
       switch (true) {
         case !name:
           return res.status(500).send({ error: "Name is Required" });
@@ -230,7 +233,7 @@ export const productCountController = async (req, res) => {
 // // product list base on page
 export const productListController = async (req, res) => {
   try {
-    const perPage = 2;
+    const perPage = 4;
     const page = req.params.page ? req.params.page : 1;
     const products = await productModel
       .find({})

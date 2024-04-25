@@ -9,7 +9,7 @@ import NavbarTop from '../../components/NavbarTop';
 const { Option } = Select;
 
 
-function CreateProduct() {
+function CreateBlog() {
   const navigate = useNavigate();
   const [categories, setCategories] = useState([]);
   const [name, setName] = useState("");
@@ -47,24 +47,26 @@ function CreateProduct() {
       const productData = new FormData();
       productData.append("name", name);
       productData.append("description", description);
-      productData.append("price", price);
-      productData.append("quantity", quantity);
-      productData.append("photo", photo);
-      productData.append("shipping", shipping);
+      // productData.append("price", price);
+      // productData.append("quantity", quantity);
+      // productData.append("photo", photo);
+      // productData.append("shipping", shipping);
       productData.append("category", category);
 
       const{data} = await axios.post(`/api/v1/product/create-product`,productData);
+      // /api/v1/auth/login
       
+
       if (data?.success) {
         toast.success(data?.message);
       } else {
         toast("Product Created Successfully");
         navigate("/dashboard/admin/products");
       }
-      } catch (error) {
-        console.log(error);
-        toast.error("something went wrong");
-      }
+    } catch (error) {
+      console.log(error);
+      toast.error("something went wrong");
+    }
   };
 
 
@@ -80,7 +82,7 @@ function CreateProduct() {
           <AdminMenu />
         </div>
         <div className="col-md-9">
-          <h1>Create Project</h1>
+          <h1>Create Blog</h1>
           <div className="m-1 w-75">
             <Select
               variant = {false}
@@ -98,7 +100,7 @@ function CreateProduct() {
                 </Option>
               ))}
             </Select>
-            <div className="mb-3">
+            {/* <div className="mb-3">
               <label className="btn btn-outline-secondary col-md-12">
                 {photo ? photo.name : "Upload Photo"}
                 <input
@@ -109,8 +111,8 @@ function CreateProduct() {
                   hidden
                 />
               </label>
-            </div>
-            <div className="mb-3">
+            </div> */}
+            {/* <div className="mb-3">
               {photo && (
                 <div className="text-center">
                   <img
@@ -121,7 +123,7 @@ function CreateProduct() {
                   />
                 </div>
               )}
-            </div>
+            </div> */}
             <div className="mb-3">
               <input
                 type="text"
@@ -141,7 +143,7 @@ function CreateProduct() {
               />
             </div>
 
-            <div className="mb-3">
+            {/* <div className="mb-3">
               <input
                 type="text"
                 value={price}
@@ -149,8 +151,8 @@ function CreateProduct() {
                 className="form-control"
                 onChange={(e) => setPrice(e.target.value)}
               />
-            </div>
-            <div className="mb-3">
+            </div> */}
+            {/* <div className="mb-3">
               <input
                 type="text"
                 value={quantity}
@@ -158,8 +160,8 @@ function CreateProduct() {
                 className="form-control"
                 onChange={(e) => setQuantity(e.target.value)}
               />
-            </div>
-            <div className="mb-3">
+            </div> */}
+            {/* <div className="mb-3">
               <Select
                 variant={false}
                 placeholder="Project is of Interior design?"
@@ -173,10 +175,10 @@ function CreateProduct() {
                 <Option value="0">No</Option>
                 <Option value="1">Yes</Option>
               </Select>
-            </div>
+            </div> */}
             <div className="mb-3">
               <button className="btn btn-primary" onClick={handleCreate}>
-                Create Project
+                Create Blog / Article
               </button>
             </div>
           </div>
@@ -187,4 +189,4 @@ function CreateProduct() {
   )
 }
 
-export default CreateProduct
+export default CreateBlog

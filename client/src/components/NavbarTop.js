@@ -4,10 +4,12 @@ import React from "react";
 import { NavLink, Link } from "react-router-dom";
 import { GiShoppingBag } from "react-icons/gi";
 import logo from '../components/img/logonobg.png';
+import { Toaster } from "react-hot-toast";
 
 const NavbarTop = () => {
   return (
     <>
+      <Toaster />
       <nav className="navbar navbar-expand-sm bg-body-tertiary">
         <div className="container-fluid">
           <button
