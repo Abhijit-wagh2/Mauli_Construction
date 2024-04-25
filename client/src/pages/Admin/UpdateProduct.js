@@ -98,8 +98,8 @@ const UpdateProduct = () => {
       const { data } = await axios.delete(
         `/api/v1/product/product-delete/${id}`
       );
-      toast.success("Product DEleted Succfully");
-      navigate("/dashboard/admin/product");
+      toast.success("Product Deleted Succfully");
+      navigate("");
     } catch (error) {
       console.log(error);
       toast.error("Something went wrong");
@@ -114,9 +114,9 @@ const UpdateProduct = () => {
             <AdminMenu />
           </div>
           <div className="col-md-9">
-            <h1>Update Product</h1>
+            <h1>Delete Product</h1>
             <div className="m-1 w-75">
-              <Select
+              {/* <Select
                 bordered={false}
                 placeholder="Select a category"
                 size="large"
@@ -132,8 +132,8 @@ const UpdateProduct = () => {
                     {c.name}
                   </Option>
                 ))}
-              </Select>
-              <div className="mb-3">
+              </Select> */}
+              {/* <div className="mb-3">
                 <label className="btn btn-outline-secondary col-md-12">
                   {photo ? photo.name : "Upload Photo"}
                   <input
@@ -144,7 +144,7 @@ const UpdateProduct = () => {
                     hidden
                   />
                 </label>
-              </div>
+              </div> */}
               <div className="mb-3">
                 {photo ? (
                   <div className="text-center">
@@ -158,7 +158,7 @@ const UpdateProduct = () => {
                 ) : (
                   <div className="text-center">
                     <img
-                      src={`${process.env.REACT_APP_API}/api/v1/product/product-photo/${id}`}
+                      src={`/api/v1/product/product-photo/${id}`}
                       alt="product_photo"
                       height={"200px"}
                       className="img img-responsive"
@@ -185,7 +185,7 @@ const UpdateProduct = () => {
                 />
               </div>
 
-              <div className="mb-3">
+              {/* <div className="mb-3">
                 <input
                   type="number"
                   value={price}
@@ -193,8 +193,8 @@ const UpdateProduct = () => {
                   className="form-control"
                   onChange={(e) => setPrice(e.target.value)}
                 />
-              </div>
-              <div className="mb-3">
+              </div> */}
+              {/* <div className="mb-3">
                 <input
                   type="number"
                   value={quantity}
@@ -202,8 +202,8 @@ const UpdateProduct = () => {
                   className="form-control"
                   onChange={(e) => setQuantity(e.target.value)}
                 />
-              </div>
-              <div className="mb-3">
+              </div> */}
+              {/* <div className="mb-3">
                 <Select
                   bordered={false}
                   placeholder="Select Shipping "
@@ -218,7 +218,7 @@ const UpdateProduct = () => {
                   <Option value="0">No</Option>
                   <Option value="1">Yes</Option>
                 </Select>
-              </div>
+              </div> */}
               <div className="mb-3">
                 {/* <button className="btn btn-primary" onClick={handleUpdate}>
                   UPDATE PRODUCT

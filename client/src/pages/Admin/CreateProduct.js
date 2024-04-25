@@ -14,10 +14,10 @@ function CreateProduct() {
   const [categories, setCategories] = useState([]);
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
-  const [price, setPrice] = useState("");
+  // const [price, setPrice] = useState("");
   const [category, setCategory] = useState("");
-  const [quantity, setQuantity] = useState("");
-  const [shipping, setShipping] = useState("");
+  // const [quantity, setQuantity] = useState("");
+  // const [shipping, setShipping] = useState("");
   const [photo, setPhoto] = useState("");
 
 
@@ -47,11 +47,11 @@ function CreateProduct() {
       const productData = new FormData();
       productData.append("name", name);
       productData.append("description", description);
-      productData.append("price", price);
-      productData.append("quantity", quantity);
       productData.append("photo", photo);
-      productData.append("shipping", shipping);
       productData.append("category", category);
+      // productData.append("price", price);
+      // productData.append("quantity", quantity);
+      // productData.append("shipping", shipping);
 
       const{data} = await axios.post(`/api/v1/product/create-product`,productData);
       
@@ -141,7 +141,7 @@ function CreateProduct() {
               />
             </div>
 
-            <div className="mb-3">
+            {/* <div className="mb-3">
               <input
                 type="text"
                 value={price}
@@ -149,8 +149,8 @@ function CreateProduct() {
                 className="form-control"
                 onChange={(e) => setPrice(e.target.value)}
               />
-            </div>
-            <div className="mb-3">
+            </div> */}
+            {/* <div className="mb-3">
               <input
                 type="text"
                 value={quantity}
@@ -158,8 +158,8 @@ function CreateProduct() {
                 className="form-control"
                 onChange={(e) => setQuantity(e.target.value)}
               />
-            </div>
-            <div className="mb-3">
+            </div> */}
+            {/* <div className="mb-3">
               <Select
                 variant={false}
                 placeholder="Project is of Interior design?"
@@ -173,7 +173,7 @@ function CreateProduct() {
                 <Option value="0">No</Option>
                 <Option value="1">Yes</Option>
               </Select>
-            </div>
+            </div> */}
             <div className="mb-3">
               <button className="btn btn-primary" onClick={handleCreate}>
                 Create Project
