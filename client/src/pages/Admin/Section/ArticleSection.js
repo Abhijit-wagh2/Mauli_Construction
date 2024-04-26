@@ -125,14 +125,17 @@ const ArticleSection = () => {
             {products
               ?.filter(p => p.category === '6629e72c2b170502ef1ac965') // Filter products by category
               .map(p => (
-                <div className="col-lg-5 " style={{ padding: '4%' }}>
-              <div className="card-name-price">
-                <h4 className="card-title">{p.name}</h4>
+                
+              <div class="card text-dark bg-light mb-3 m-4">
+                <div class="card-header">{p.name}</div>
+                <div class="card-body">
+                  <h5 class="card-title"></h5>
+                  <p class="card-text">{p.description}</p>
+                </div>
               </div>
-              <p className="card-text" >
-                {p.description}
-              </p>
-            </div>
+
+
+              
                 
               ))}
           </div>
