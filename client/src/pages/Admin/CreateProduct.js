@@ -49,23 +49,27 @@ function CreateProduct() {
       productData.append("description", description);
       productData.append("photo", photo);
       productData.append("category", category);
-      // productData.append("price", price);
-      // productData.append("quantity", quantity);
-      // productData.append("shipping", shipping);
-
-      const{data} = await axios.post(`/api/v1/product/create-product`,productData);
-      
+  
+      const { data } = await axios.post(`/api/v1/product/create-product`, productData);
+        
       if (data?.success) {
         toast.success(data?.message);
+        
+        // Clear form data
+        setName("");
+        setDescription("");
+        setCategory("");
+        setPhoto(null); // Assuming photo state is set to null initially
       } else {
         toast("Project Created Successfully");
         navigate("/dashboard/admin/products");
       }
-      } catch (error) {
-        console.log(error);
-        toast.error("something went wrong");
-      }
+    } catch (error) {
+      console.log(error);
+      toast.error("something went wrong");
+    }
   };
+  
 
 
 

@@ -48,30 +48,27 @@ function CreateBlog() {
       const productData = new FormData();
       productData.append("name", name);
       productData.append("description", description);
-      // productData.append("price", price);
-      // productData.append("quantity", quantity);
-      // productData.append("photo", photo);
-      // productData.append("shipping", shipping);
       productData.append("category", category);
-
-      const{data} = await axios.post(`/api/v1/product/create-product`,productData);
-      // /api/v1/auth/login
-      
-
+  
+      const { data } = await axios.post(`/api/v1/product/create-product`, productData);
+  
       if (data?.success) {
         toast.success(data?.message);
+        
+        // Clear form data
+        setName("");
+        setDescription("");
+        setCategory("");
       } else {
         notify();
-        //toast("Project Created Successfully");
         navigate("/dashboard/admin/products");
       }
     } catch (error) {
       console.log(error);
       notify();
-      //toast.error("something went wrong");
     }
   };
-
+  
 
 
 
