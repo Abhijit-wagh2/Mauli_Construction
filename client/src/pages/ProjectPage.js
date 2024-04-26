@@ -150,7 +150,7 @@ const ProjectPage = () => {
                     <div className="card-name-price">
                       <h5 className="card-title">{p.name}</h5>
                       <p className="card-text">
-                        {p.description.substring(0, 60)}...
+                        <pre>{p.description.substring(0, 60)}</pre>...
                       </p>
                       <p className="card-title card-price">
                         {p.price}

@@ -121,11 +121,11 @@ const ArticleSection = () => {
     <div className="section-header section-bg" style={{ padding: "50px" }}>
           <h2 style={{ paddingTop: "20px" }}>Articles</h2>
         </div>
-          <div className="d-flex flex-wrap">
+          <div className="d-flex flex-wrap justify-content-evenly">
             {products
               ?.filter(p => p.category === '6629e72c2b170502ef1ac965') // Filter products by category
               .map(p => (
-                <div className="card-body mx-auto" style={{ margin: '1%', padding: '2%'  }}>
+                <div className="col-lg-5 " style={{ padding: '4%' }}>
               <div className="card-name-price">
                 <h4 className="card-title">{p.name}</h4>
               </div>
@@ -133,7 +133,7 @@ const ArticleSection = () => {
                 {p.description}
               </p>
             </div>
-
+                
               ))}
           </div>
 

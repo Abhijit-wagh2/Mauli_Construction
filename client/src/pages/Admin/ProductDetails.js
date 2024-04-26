@@ -51,8 +51,8 @@ const ProductDetails = () => {
             src={`/api/v1/product/product-photo/${product._id}`}
             className="card-img-top"
             alt={product.name}
-            height="300"
-            width={"350px"}
+            height="300px"
+            width={"400px"}
           />
         </div>
         <div className="col-md-6 product-details-info">
@@ -82,12 +82,7 @@ const ProductDetails = () => {
               <div className="card-body">
                 <div className="card-name-price">
                   <h5 className="card-title">{p.name}</h5>
-                  <h5 className="card-title card-price">
-                    {p.price.toLocaleString("en-US", {
-                      style: "currency",
-                      currency: "USD",
-                    })}
-                  </h5>
+                 
                 </div>
                 <p className="card-text ">
                   {p.description.substring(0, 60)}...

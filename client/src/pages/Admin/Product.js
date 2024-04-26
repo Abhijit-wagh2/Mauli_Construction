@@ -139,11 +139,11 @@ const Products = () => {
             {products
               ?.filter(p => p.category === '662928eb5a02dfe6604fceb5') // Filter products by category
               .map(p => (
-                <div className="card m-1 mx-auto" key={p._id}>
+                <div className="card m-1 mx-auto" key={p._id} style={{width:"400px"}}>
                   <img
                     src={`/api/v1/product/product-photo/${p._id}`}
                     className="card-img-top"
-                    style={{ width: '500px', height: '300px' }}
+                    style={{ width: '400px', height: '300px' }}
                     alt={p.name}
                   />
                   

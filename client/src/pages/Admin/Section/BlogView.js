@@ -17,7 +17,7 @@ function BlogView() {
         setProducts(data.products);
       } catch (error) {
         console.log(error);
-        toast.error("Someething Went Wrong");
+        toast.error("Something Went Wrong");
       }
     };
   
