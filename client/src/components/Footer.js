@@ -55,7 +55,7 @@ function Footer() {
               <li>RCC Design and Supervision</li>
               <li>Estimation & Valuation</li>
               <li>3D Elevations</li>
-              
+              <li>Many more...</li>
             </ul>
           </div>
 
