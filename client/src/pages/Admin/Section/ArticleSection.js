@@ -116,7 +116,7 @@ const ArticleSection = () => {
   return (
 
     <>
-    <div className="row" id="aricles">
+    <div className="row" id="articles">
     <div className="col-md-12">
     <div className="section-header section-bg" style={{ padding: "50px" }}>
           <h2 style={{ paddingTop: "20px" }}>Articles</h2>
