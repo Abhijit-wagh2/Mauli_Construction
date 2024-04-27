@@ -39,9 +39,9 @@ function ReachUs() {
     },
     validate,
     onSubmit: (values, { setSubmitting, resetForm }) => {
-      const serviceId = "service_37l7w4o";
-      const templateId = "template_nzn6tn9";
-      const publicKey = "DK7lAARSF3aqYroPP";
+      const serviceId = "service_w3am0zi";
+      const templateId = "template_bbuhb78";
+      const publicKey = "Gh5KZszbfQYKWqFmt";
 
       const templateParams = {
         name: values.name,
