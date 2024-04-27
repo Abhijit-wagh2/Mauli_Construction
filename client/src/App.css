@@ -1128,6 +1128,12 @@ section {
   background-color: #f5f6f7;
   text-align:right;
 }
+
+.hidden {
+
+  display: none;
+}
+
 /* media query */
 @media only screen and (max-width: 600px) {
   .testimonials .testimonial-item {
@@ -1146,21 +1152,21 @@ section {
     /* margin: 4%; */
   }
 
+  .hidden {
+    display: none;
+    width: 0%;
+    height: 0%;
+  }
+
   .testimonials .testimonial-item .testimonial-img {
+  height: min-content;
   width: 100%;
   border-radius: 10px;
   border: 6px solid #fff;
+
   }
 }
 
-@media (maxn-width: 400px) {
-
-  
-
-
-
-  
-}
 
 /*--------------------------------------------------------------
 # Stats Counter Section

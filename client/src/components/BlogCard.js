@@ -6,7 +6,16 @@ function BlogCard(props) {
      
         <div className="testimonial-wrap">
           <div className="testimonial-item">
-          <img src={`/api/v1/product/product-photo/${props.image}`} class="testimonial-img" alt=""/>
+            
+
+      <img
+        src={props.image ? `/api/v1/product/product-photo/${props.image}` : '/placeholder-image.jpg' }
+        className={`testimonial-img ${!props.image && 'hidden'}`}
+        alt=""
+    />
+
+
+          
 
           <div className='separate'>
             <h3>{props.name}</h3>
