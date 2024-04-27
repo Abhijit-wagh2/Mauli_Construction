@@ -148,6 +148,7 @@ const BlogSection = () => {
                             
                             <div className="slides-2 swiper">
                               <div className="swiper-wrapper">
+                                
                               <ReviewCard image={`${p._id}`} name={p.name} identity={p.name} review={p.description}/>
                             </div>
                           <div className="swiper-pagination"></div>
