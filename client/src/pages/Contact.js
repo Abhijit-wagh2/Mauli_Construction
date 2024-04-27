@@ -93,8 +93,6 @@ function Contact() {
 
         <div className="row gy-4 mt-1">
 
-        <Map/>
-
         <ReachUs/>
         </div>
 
