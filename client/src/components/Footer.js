@@ -50,11 +50,11 @@ function Footer() {
         <br />
             <h4>Our Services</h4>
             <ul>
-              <li><a href="#services">Construction Consultancy</a></li>
-              <li><a href="#services">Planning</a></li>
-              <li><a href="#services">RCC Design and Supervision</a></li>
-              <li><a href="#services">Estimation & Valuation</a></li>
-              <li><a href="#services">3D Elevations</a></li>
+              <li>Construction Consultancy</li>
+              <li>Planning</li>
+              <li>RCC Design and Supervision</li>
+              <li>Estimation & Valuation</li>
+              <li>3D Elevations</li>
               
             </ul>
           </div>
