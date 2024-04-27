@@ -126,11 +126,11 @@ const ArticleSection = () => {
               ?.filter(p => p.category === '6629e72c2b170502ef1ac965') // Filter products by category
               .map(p => (
                 
-              <div class="card text-dark bg-light mb-3 m-4">
-                <div class="card-header">{p.name}</div>
-                <div class="card-body">
-                  <h5 class="card-title"></h5>
-                  <p class="card-text">{p.description}</p>
+              <div class="card2 text-dark bg-light mb-3 m-4">
+                <div class="card2-header">{p.name}</div>
+                <div class="card2-body">
+                  <h5 class="card2-title"></h5>
+                  <p class="card2-text">{p.description}</p>
                 </div>
               </div>
 
