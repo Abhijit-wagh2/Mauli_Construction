@@ -42,7 +42,7 @@ function Navbar() {
                 </NavLink>
               </li>
           <li><a href="#testimonials">Blogs</a></li>
-          
+          <li><a href="#articles">Articles</a></li>
           <li><NavLink to="/contact">
           Contact</NavLink></li>
         </ul>
@@ -56,11 +56,12 @@ function Navbar() {
           <li><a href="#services">Services</a></li>
           <li><a href="#features">Features</a></li>
           <li className="nav-item">
-                <NavLink to="/dashboard/admin/product_dummy" className="nav-link">
+                <NavLink to="/dashboard/admin/product_dummy" className="nav-link" style={{color:"#fff"}}>
                   Projects
                 </NavLink>
               </li>
-          <li><a href="#">Blogs</a></li>
+              <li><a href="#testimonials">Blogs</a></li>
+              <li><a href="#articles">Articles</a></li>
           <li><NavLink to="/contact">
           Contact</NavLink></li>
         </ul>
