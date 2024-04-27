@@ -76,3 +76,9 @@ code {
 .card-body{
   color:black;
 }
+pre{
+  font-family: var(--font-default);
+}
+.card{
+  width:60rem;
+}
