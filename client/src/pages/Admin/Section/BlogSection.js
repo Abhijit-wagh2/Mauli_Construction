@@ -121,6 +121,7 @@ const BlogSection = () => {
       },
     });
   }, []);
+
  
 
 
@@ -143,19 +144,17 @@ const BlogSection = () => {
               .map(p => (
                 <div className="card m-3 mx-auto" key={p._id} >
               
-          <section id="testimonials" className="testimonials section-bg">
-             <div className="container" data-aos="fade-up">
-                      <div className="slides-2 swiper">
-                        <div className="swiper-wrapper">
-                        <ReviewCard name={p.name} identity={p.name} review={p.description}/>
+                <section id="testimonials" className="testimonials section-bg">
+                            
+                            <div className="slides-2 swiper">
+                              <div className="swiper-wrapper">
+                              <ReviewCard image={`${p._id}`} name={p.name} identity={p.name} review={p.description}/>
+                            </div>
+                          <div className="swiper-pagination"></div>
                       </div>
-                    <div className="swiper-pagination"></div>
-                </div>
-              </div>
-          </section>
+                    
+                </section>
 
-
-            
                 </div>
               ))}
           </div>
